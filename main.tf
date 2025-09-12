@@ -82,8 +82,8 @@ resource "aws_cloudwatch_event_rule" "native_expiry" {
   description = "Notify 40 minutes before capacity blocks expire"
 
   event_pattern = jsonencode({
-    source       = ["aws.ec2"]
-    detail_type  = ["Capacity Block Reservation Expiration Warning"]
+    source      = ["aws.ec2"]
+    detail-type = ["Capacity Block Expiration Warning"]
   })
 }
 
