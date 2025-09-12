@@ -90,7 +90,7 @@ resource "aws_cloudwatch_event_rule" "native_expiry" {
 resource "aws_cloudwatch_event_rule" "daily_schedule" {
   name                = "capacity-block-expiry-1day-notification"
   description         = "Run capacity block checker daily"
-  schedule_expression = "rate(1 day)"
+  schedule_expression = "cron(0 0 * * ? *)"
 }
 
 # EventBridge Targets
